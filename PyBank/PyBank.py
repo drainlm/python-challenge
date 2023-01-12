@@ -28,7 +28,7 @@
 import os 
 import csv
 
-path = r"C:\Users\lisam\OneDrive\Desktop\Module 3 Challenge\Instructions"
+path = r"C:\Users\lisam\OneDrive\Documents\GitHub\python-challenge"
 
 budget_data = os.path.join("..", "PyBank", "budget_data.csv")
 
