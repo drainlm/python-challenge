@@ -30,8 +30,8 @@
 import os 
 import csv
 
-path = r"C:\Users\lisam\OneDrive\Desktop\Module 3 Challenge\Instructions"
-
+path = r"C:\Users\lisam\OneDrive\Documents\GitHub\python-challenge\PyPoll\election_data.csv"
+    
 election_data = os.path.join("..", "PyPoll", "election_data.csv")
 
 with open(election_data) as csvfile:
