@@ -22,7 +22,7 @@ This script analyzes financial records included in the budget_data.csv (two colu
     This is accomplished by finding the min profit_change, indexing the data, and then using the index to find the corresponding date
 
 The script then prints this data summary in the terminal and exports a text file with the results. 
-    -This is accomplished by using an f-string, using \n to create a new line, and using round, 2 function to limit the average_change
+    -This is accomplished by storing the data using f-string, using \n to create a new line, and using round, 2 function to limit the average_change, and then printing in the terminal and writing to a text file. 
 
 The output should look like this: 
 
