@@ -17,9 +17,10 @@ with open(election_data) as csvfile:
     # Skip the header row
     next(election_data)
 
-## Determine the total number of votes cast
+## Compile a complete list of candidates who received votes, the number of votes
+    #each candidate received, and the total number of votes cast
     for row in election_data:
-        # Adjust number of months by 1
+        # Adjust number of votes by 1
         total_votes += 1
         # If the candidate is in the dictionary, then add to votes
         if row[2] in candidate_data: 
@@ -28,7 +29,6 @@ with open(election_data) as csvfile:
         else: 
             candidate_data[row[2]] = 1
 
-## Compile a complete list of candidates who received votes
     for candidate in candidate_data: 
         
     ## Determine the percentage of votes each candidate won 
@@ -39,15 +39,28 @@ with open(election_data) as csvfile:
     # Update candidate_data dictionary with the percentage
         candidate_data[candidate] = [percentage, candidate_data[candidate]]
 
-## Determine the total number of votes each candidate won
-
 ## Determine the winner of the election based on popular vote
     for candidate, votes in candidate_data.items():
+        # If the number of votes of a candidate is greater than max_votes, then declare winner
         if candidate_data[candidate][1] > max_votes: 
             winner = candidate
+            # Update the current number of votes before looping again
             max_votes = candidate_data[candidate][1] 
 
-print(candidate)
-print(percentage)
-print(votes)
 
+# Define summary_results including Title "Election Results", break line, "Total Votes", break line, 
+# each candidate name with percent of votes (total votes), break line, winner, and another break line
+summary_results = (f"Election Results\n"f"----------------------------\n"f"Total Votes: {total_votes}\n"
+f"----------------------------\n"f"{candidate_data}\n"f"----------------------------\n"
+f"Winner: {winner})\n"f"----------------------------")
+
+# Print summary_results to terminal
+print(summary_results)
+
+# Create txt file
+dataFile = open('Election Results.txt', 'w')
+
+# Write summary_results into text file
+dataFile.write(summary_results)
+
+dataFile.close()
