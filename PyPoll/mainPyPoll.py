@@ -4,18 +4,18 @@ import csv
 
 # Variables
 total_votes = 0 #holds the total number of votes
-candidate_data = {} #creates a dictionary to store the canidates, perecentage of votes, and number of votes won
-winner = None #holds the name of the winner
+candidate_data = {} #creates a dictionary to store the candidates, perecentage of votes, and number of votes won
 max_votes = 0 #holds value of max votes 
 
 election_data = os.path.join("PyPoll", "election_data.csv")
 
 # Open the election_data.csv file
 with open(election_data) as csvfile:
+    # Split the data on commas
     election_data = csv.reader(csvfile, delimiter=",")
 
     # Skip the header row
-    next(election_data)
+    header = next(election_data)
 
 ## Compile a complete list of candidates who received votes, the number of votes
     #each candidate received, and the total number of votes cast
@@ -50,9 +50,14 @@ with open(election_data) as csvfile:
 
 # Define summary_results including Title "Election Results", break line, "Total Votes", break line, 
 # each candidate name with percent of votes (total votes), break line, winner, and another break line
-summary_results = (f"Election Results\n"f"----------------------------\n"f"Total Votes: {total_votes}\n"
-f"----------------------------\n"f"{candidate_data}\n"f"----------------------------\n"
-f"Winner: {winner})\n"f"----------------------------")
+summary_results = ("Election Results\n"
+    f"-------------------------\n"
+    f"Total Votes: {total_votes}\n"
+    f"-------------------------\n"
+    f"{candidate_data}\n"
+    f"-------------------------\n"
+    f"Winner: {winner}\n"
+    f"-------------------------\n")
 
 # Print summary_results to terminal
 print(summary_results)

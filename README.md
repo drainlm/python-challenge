@@ -38,31 +38,29 @@ Greatest Decrease in Profits: Feb-14 (-1825558)
 2. PyPoll
 This script anaylzes election data included in the election_data.csv (three columns: "Ballot ID", "County", and "Candidate") and calucates the following values:
     - The total number of votes cast
-    This is accomplished by using a for loop that sums the total votes together
+    This is accomplished by using a for loop that sums the total votes together using the dataset
 
-    -The total number of votes each candidate won
-    This is accomplished by looping through the data 
-
-    -A complete list of candidates who received votes
-    This is accomplished by 
+    -A complete list of candidates who received votes and the total number of votes won by each candidate 
+    This is accomplished by using a candidate_data dictionary to holding the candidate names, the number of votes, and percentage. Then the for loop that is gathering the total votes, loops through the data to determine if a candidate name has been added (adding it if not), and adding to the candidate vote tally
 
     -The percentage of votes each candidate won
-    This is accomplished by 
+    This is accomplished by another for loop that sums each candidate's vote tally and divides this over the number of total votes and multiplies by 100 for the percentage. Next, it updates the percentage to the candidate data dictionary
 
 
     -The winner of the elction based on popular vote
-    This is accomplished by 
+    This is accomplished by a third for loop that loopes through the candidate data items to find the candidate with the highest number of votes
 
 The script then prints this data summary in the terminal and exports a text file with the results. 
-    -This is accomplished by using an f-string and using \n to create a new line
+    -This is accomplished by storing the data using f-string and using \n to create new lines, and then printing in the terminal and writing to a text file. 
+        I think I may have needed to separate each of my values to make it look nicer, but I can't quite figure out how to do this without starting over. I already had to redo this whole challenge because I did it in pandas the first time around (a good exercise!). Since the grading rubric doesn't say it has to be formatted perfectly, I'm hoping that having the correct results will be enough. 
 
 The output should look like this: 
 
 Election Results
-----------------------------
+-------------------------
 Total Votes: 369711
-----------------------------
+-------------------------
 {'Charles Casper Stockham': [23.04854332167558, 85213], 'Diana DeGette': [73.81224794501652, 272892], 'Raymon Anthony Doane': [3.1392087333079077, 11606]}
-----------------------------
-Winner: Diana DeGette)
-----------------------------
+-------------------------
+Winner: Diana DeGette
+-------------------------

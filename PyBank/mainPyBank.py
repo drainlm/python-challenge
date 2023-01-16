@@ -12,10 +12,11 @@ budget_data = os.path.join("PyBank", "budget_data.csv")
 
 # Open the budget_data.csv file
 with open(budget_data) as csvfile:
+    # Split the data on commas
     budget_data = csv.reader(csvfile, delimiter=",")
 
-    # Skip the header row
-    next(budget_data)
+    # Skip the header row, but store it because that's on the grading rubric i guess
+    header = next(budget_data)
 
     # Define previous_profits to read data from "Profit/Losses"
     previous_profit = int(next(budget_data)[1])
@@ -72,10 +73,13 @@ min_profit_date = dates[min_profit_index]
 # Define summary_results including Title: "Financial Analysis", break line, "Total Months", "Total" of 
     #profits, "Average Change", "Greatest Increase in Profits", and "Greatest Decrease in Profits" 
     #use round function so the average change includes only two decimal points
-summary_results = (f"Financial Analysis\n"f"----------------------------\n"f"Total Months: {num_months}\n"
-f"Total: ${net_total}\n"f"Average Change: ${round(average_change,2)}\n"
-f"Greatest Increase in Profits: {max_profit_date} ({max_profit_amount})\n"
-f"Greatest Decrease in Profits: {min_profit_date} ({min_profit_amount})")
+summary_results = (f"Financial Analysis\n"
+    f"----------------------------\n"
+    f"Total Months: {num_months}\n"
+    f"Total: ${net_total}\n"
+    f"Average Change: ${round(average_change,2)}\n"
+    f"Greatest Increase in Profits: {max_profit_date} ({max_profit_amount})\n"
+    f"Greatest Decrease in Profits: {min_profit_date} ({min_profit_amount})")
 
 # Print summary_results to terminal
 print(summary_results)
