@@ -51,8 +51,7 @@ This script anaylzes election data included in the election_data.csv (three colu
     This is accomplished by a third for loop that loopes through the candidate data items to find the candidate with the highest number of votes
 
 The script then prints this data summary in the terminal and exports a text file with the results. 
-    -This is accomplished by storing the data using f-string and using \n to create new lines, and then printing in the terminal and writing to a text file. 
-        I think I may have needed to separate each of my values to make it look nicer, but I can't quite figure out how to do this without starting over. I already had to redo this whole challenge because I did it in pandas the first time around (a good exercise!). Since the grading rubric doesn't say it has to be formatted perfectly, I'm hoping that having the correct results will be enough. 
+    -This is accomplished by first using a dictionary key to pull the candidate and their stored data (percentage and total votes), storing the data in summary_results while using f-string, using round, 3 and % for formating, and using \n to create new lines. Then I set summary_results to print in the terminal and write to a text file. 
 
 The output should look like this: 
 
@@ -60,7 +59,9 @@ Election Results
 -------------------------
 Total Votes: 369711
 -------------------------
-{'Charles Casper Stockham': [23.04854332167558, 85213], 'Diana DeGette': [73.81224794501652, 272892], 'Raymon Anthony Doane': [3.1392087333079077, 11606]}
+Charles Casper Stockham: 23.049% (85213)
+Diana DeGette: 73.812% (272892)
+Raymon Anthony Doane: 3.139% (11606)
 -------------------------
 Winner: Diana DeGette
 -------------------------

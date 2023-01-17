@@ -47,6 +47,8 @@ with open(election_data) as csvfile:
             # Update the current number of votes before looping again
             max_votes = candidate_data[candidate][1] 
 
+# Create key for dictionary to reference candidate names, their percentage, and their total votes
+    candidate_names = list(candidate_data.keys())
 
 # Define summary_results including Title "Election Results", break line, "Total Votes", break line, 
 # each candidate name with percent of votes (total votes), break line, winner, and another break line
@@ -54,7 +56,9 @@ summary_results = ("Election Results\n"
     f"-------------------------\n"
     f"Total Votes: {total_votes}\n"
     f"-------------------------\n"
-    f"{candidate_data}\n"
+    f"{candidate_names[0]}: {round(candidate_data[candidate_names[0]][0], 3)}% ({candidate_data[candidate_names[0]][1]})\n"
+    f"{candidate_names[1]}: {round(candidate_data[candidate_names[1]][0], 3)}% ({candidate_data[candidate_names[1]][1]})\n"
+    f"{candidate_names[2]}: {round(candidate_data[candidate_names[2]][0], 3)}% ({candidate_data[candidate_names[2]][1]})\n"
     f"-------------------------\n"
     f"Winner: {winner}\n"
     f"-------------------------\n")
