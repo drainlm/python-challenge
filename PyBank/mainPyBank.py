@@ -8,7 +8,7 @@ net_total = 0 #hold the total sum of profits
 profit_change = [] #list of changes in profit
 dates = [] #list of dates associated with changes in profit
 
-budget_data = os.path.join("PyBank", "budget_data.csv")
+budget_data = os.path.join("PyBank", "Resources", "budget_data.csv")
 
 # Open the budget_data.csv file
 with open(budget_data) as csvfile:
@@ -84,8 +84,9 @@ summary_results = (f"Financial Analysis\n"
 # Print summary_results to terminal
 print(summary_results)
 
-# Create txt file
-dataFile = open('Financial Analysis.txt', 'w')
+# Create txt file inside directory
+path = os.path.join("PyBank", "analysis", "Financial Analysis.txt")
+dataFile = open(path, 'w')
 
 # Write summary_results into text file
 dataFile.write(summary_results)

@@ -7,7 +7,7 @@ total_votes = 0 #holds the total number of votes
 candidate_data = {} #creates a dictionary to store the candidates, perecentage of votes, and number of votes won
 max_votes = 0 #holds value of max votes 
 
-election_data = os.path.join("PyPoll", "election_data.csv")
+election_data = os.path.join("PyPoll", "Resources", "election_data.csv")
 
 # Open the election_data.csv file
 with open(election_data) as csvfile:
@@ -66,8 +66,9 @@ summary_results = ("Election Results\n"
 # Print summary_results to terminal
 print(summary_results)
 
-# Create txt file
-dataFile = open('Election Results.txt', 'w')
+# Create txt file inside directory
+path = os.path.join("PyPoll", "analysis", "Election Results.txt")
+dataFile = open(path, 'w')
 
 # Write summary_results into text file
 dataFile.write(summary_results)
