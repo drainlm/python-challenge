@@ -14,7 +14,7 @@ with open(election_data) as csvfile:
     # Split the data on commas
     election_data = csv.reader(csvfile, delimiter=",")
 
-    # Skip the header row
+    # # Skip the header row, but store it because that's on the grading rubric
     header = next(election_data)
 
 ## Compile a complete list of candidates who received votes, the number of votes

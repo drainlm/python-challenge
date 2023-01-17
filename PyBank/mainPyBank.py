@@ -15,7 +15,7 @@ with open(budget_data) as csvfile:
     # Split the data on commas
     budget_data = csv.reader(csvfile, delimiter=",")
 
-    # Skip the header row, but store it because that's on the grading rubric i guess
+    # Skip the header row, but store it because that's on the grading rubric
     header = next(budget_data)
 
     # Define previous_profits to read data from "Profit/Losses"
